@@ -40,17 +40,27 @@ Route::get('/shopify', function() {
 
 //    echo print_r($products, true);
 
+//    @TODO: COMPLETE PARSING THE RESPONSE DATA AND BEGIN UPDATING TO USE VIEWS.
+    $product_array = array();
+
     foreach ($products as $product) {
 
-        Product::create([
-            'id'        => $product['id'],
-            'store_id'  => $store_id,
-            'name'      => $product['title'],
-            'sku'       => $product['variants']['sku'],
-            'quantity'  => $product['variants']['inventory_quantity'],
-            'price'     => $product['variants']['price'],
-            'created_at'=> $product['variants']['created_at']
-        ]);
+        $product_id = $product['id'];
+        echo "Product ID :: " . $product_id;
+
+        foreach ($product['variants'] as $variant) {
+
+            echo print_r($variant, true);
+        }
+//        Product::create([
+//            'id'        => $product['id'],
+//            'store_id'  => $store_id,
+//            'name'      => $product['title'],
+//            'sku'       => $product['variants']['sku'],
+//            'quantity'  => $product['variants']['inventory_quantity'],
+//            'price'     => $product['variants']['price'],
+//            'created_at'=> $product['variants']['created_at']
+//        ]);
     }
 
 });
