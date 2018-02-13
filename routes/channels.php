@@ -14,3 +14,9 @@
 Broadcast::channel('App.User.{id}', function ($user, $id) {
     return (int) $user->id === (int) $id;
 });
+
+/*
+ *
+ * @TODO: LOOK AT CREATING A CHANNEL FOR EACH STORE OR STORE ID?
+ *
+ */
