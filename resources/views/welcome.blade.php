@@ -1,3 +1,4 @@
+{{--@TODO: NEED TO LOOK AT UPDATING TO "DASHBOARD" HOUSING EACH STORE--}}
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
     <head>
