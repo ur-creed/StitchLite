@@ -25,7 +25,13 @@ class ProductController extends Controller
      */
     public function create()
     {
+        $product = new Product;
 
+        // TODO: CREATE A CREATE VIEW TO ADD NEW PRODUCTS
+        $product->name = "Test";
+
+        return View::make('products.create')
+            ->with('product', $product);
     }
 
     /**
@@ -65,7 +71,11 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        $product = Product::find($id);
+
+        // TODO: CREATE A EDIT VIEW TO EDIT PRODUCTS
+        return View::make('products.edit')
+            ->with('product', $product);
     }
 
     /**
