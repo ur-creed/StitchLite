@@ -20,8 +20,8 @@ class CreateProductsTable extends Migration
             $table->string('sku');
             $table->unsignedInteger('quantity');
             $table->unsignedDecimal('price', 10, 2);
-            $table->string('variants_name');
-            $table->unsignedInteger('variants_id');
+            $table->string('variant_name');
+            $table->unsignedInteger('variant_id');
             $table->timestamps();
         });
     }
