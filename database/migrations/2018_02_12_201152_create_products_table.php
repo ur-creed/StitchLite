@@ -21,7 +21,7 @@ class CreateProductsTable extends Migration
             $table->unsignedInteger('quantity');
             $table->unsignedDecimal('price', 10, 2);
             $table->string('variant_name');
-            $table->unsignedInteger('variant_id');
+            $table->unsignedInteger('product_id')->unique()->index()->nullable();
             $table->timestamps();
         });
     }
